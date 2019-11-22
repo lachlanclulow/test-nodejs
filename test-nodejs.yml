@@ -287,7 +287,7 @@ parameters:
   displayName: Namespace
   name: NAMESPACE
   required: true
-  value: openshift
+  value: lachlanclulow-1946
 - description: Version of NodeJS image to be used (6, 8, or latest).
   displayName: Version of NodeJS Image
   name: NODEJS_VERSION
