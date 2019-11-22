@@ -92,6 +92,8 @@ objects:
       script: npm test
     source:
       contextDir: ${CONTEXT_DIR}
+      sourceSecret:
+        name: ${GIT_SECRET}
       git:
         ref: ${SOURCE_REPOSITORY_REF}
         uri: ${SOURCE_REPOSITORY_URL}
@@ -280,7 +282,7 @@ parameters:
   displayName: Name
   name: NAME
   required: true
-  value: nodejs-mongodb-example
+  value: nodejs-mongodb-example-v1
 - description: The OpenShift Namespace where the ImageStream resides.
   displayName: Namespace
   name: NAMESPACE
@@ -310,7 +312,7 @@ parameters:
   displayName: Git Repository URL
   name: SOURCE_REPOSITORY_URL
   required: true
-  value: https://github.com/sclorg/nodejs-ex.git
+  value: git@github.ibm.com:anzredhatsquad/ui.git
 - description: Set this to a branch name, tag or other ref of your repository if you
     are not using the default branch.
   displayName: Git Reference
@@ -360,3 +362,8 @@ parameters:
 - description: The custom NPM mirror URL
   displayName: Custom NPM Mirror URL
   name: NPM_MIRROR
+- name: GIT_SECRET
+  description: git secret used to access private repo
+  displayName: Git Secret
+  required: true
+  value: test-lc-v2
